@@ -1,0 +1,41 @@
+model Role {
+  id       Int    @id @default(autoincrement())
+  roleName String
+
+  User       User[]
+  Permission Permission[]
+}
+
+model User {
+  id       Int     @id @default(autoincrement())
+  username String  @unique
+  email    String
+  isActive Boolean @default(true)
+  password String
+  roleId   Int
+
+  Role Role @relation(fields: [roleId], references: [id], onDelete: Cascade)
+}
+
+model Permission {
+  id        Int     @id @default(autoincrement())
+  roleId    Int
+  roleName  String
+  resources String
+  create    Boolean @default(false)
+  read      Boolean @default(false)
+  update    Boolean @default(false)
+  delete    Boolean @default(false)
+
+  Role Role @relation(fields: [roleId], references: [id])
+}
+
+model Customer {
+  id          Int    @id @default(autoincrement())
+  name        String
+  phoneNumber String
+  address     String
+
+  Rental        Rental[]
+  CreditProduct CreditProduct[]
+}

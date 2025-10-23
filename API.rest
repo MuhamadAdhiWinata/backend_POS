@@ -1,0 +1,54 @@
+@url = http://localhost:3000/api/
+@path = rental/
+@param = 1
+
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NjA2MzY1NzIsImV4cCI6MTc2MDY0MDE3Mn0.k2VBDd2KfMPmbiyVBp9ZLn159EbrfZ2zv-y5k1WoaLs
+
+###
+GET {{url}}{{path}}
+Authorization: Bearer {{token}}
+
+###
+POST {{url}}{{path}}
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "customerId": 1,
+  "startDate": "2025-10-21",
+  "endDate": "2025-10-24",
+  "location": "Jl bantul",
+  "statusRental": "Booked",
+  "statusPayment": "Belum",
+  "paymentAmount": 0,
+  "underPayment": 0,
+  "rentalProductId": 1,
+  "quantity": 2,
+  "note": "Belum melakukan pembayaran"
+}
+
+###
+POST {{url}}{{path}}
+Content-Type: application/json
+
+{
+  "email": "admin@gmail.com",
+  "password": "admin123"
+}
+
+###
+GET  {{url}}{{path}}{{param}}
+
+###
+PUT {{url}}{{path}}{{param}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "Kipas Blower",
+  "price": 125000,
+  "stock": 8
+}
+
+###
+DELETE {{url}}{{path}}{{param}}
