@@ -2,6 +2,7 @@
   "admin": {
     "rental-product": ["create", "read", "update", "delete"],
     "rental": ["create", "read", "update", "delete"],
-    "customer": ["create", "read", "update", "delete"]
+    "customer": ["create", "read", "update", "delete"],
+    "siswa": ["create", "read", "update", "delete"]
   }
 }

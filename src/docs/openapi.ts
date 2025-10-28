@@ -1,10 +1,12 @@
 import { OpenApiGeneratorV3 } from "@asteasolutions/zod-to-openapi";
 import { RegistryUser } from "./UserOpenapi";
 import { RegistryCredit } from "./CreditOpenapi";
+import { RegistrySiswa } from "./Siswa";
 
 const allDefinition = [
   ...RegistryUser.definitions,
   ...RegistryCredit.definitions,
+  ...RegistrySiswa.definitions,
 ];
 
 const generator = new OpenApiGeneratorV3(allDefinition);

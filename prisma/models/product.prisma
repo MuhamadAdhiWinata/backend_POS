@@ -1,0 +1,16 @@
+model Siswa {
+  id               Int      @id @default(autoincrement())
+  nis              Int
+  nama             String
+  kelasId         Int
+
+  kelas           kelas    @relation(fields: [kelasId], references: [id], onDelete: Cascade)
+}
+
+model kelas {
+  id              Int      @id @default(autoincrement())
+  namaKelas       String
+  JumlahAnggota   Int
+
+  siswa          Siswa[]
+}
