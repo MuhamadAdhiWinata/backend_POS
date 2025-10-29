@@ -2,9 +2,11 @@ import { Router } from "express";
 import siswaRoute from "./SiswaRoutes";
 import kelasRoute from "./KelasRoutes";
 import userRoute from "./user/userRoutes";
+import KategoriRoute from "./Kategori/KategoriRoutes";
 
 const router = Router();
 
+router.use("/kategori",  KategoriRoute);
 router.use("/user",  userRoute);
 router.use("/siswa", siswaRoute);
 router.use("/kelas", kelasRoute);
