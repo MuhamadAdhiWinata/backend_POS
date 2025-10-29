@@ -51,7 +51,6 @@ model Product {
 model Transaksi {
   id             Int               @id @default(autoincrement())
   id_user        Int
-  nama_konter    String?
   total_harga    Decimal           @db.Decimal(12, 2)
   diskon         Decimal?          @db.Decimal(10, 2)
   status         String?           // pending / done / cancel

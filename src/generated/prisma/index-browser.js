@@ -158,7 +158,6 @@ exports.Prisma.ProductScalarFieldEnum = {
 exports.Prisma.TransaksiScalarFieldEnum = {
   id: 'id',
   id_user: 'id_user',
-  nama_konter: 'nama_konter',
   total_harga: 'total_harga',
   diskon: 'diskon',
   status: 'status',
@@ -221,7 +220,6 @@ exports.Prisma.ProductOrderByRelevanceFieldEnum = {
 };
 
 exports.Prisma.TransaksiOrderByRelevanceFieldEnum = {
-  nama_konter: 'nama_konter',
   status: 'status'
 };
 

@@ -4701,7 +4701,6 @@ export namespace Prisma {
   export type TransaksiMinAggregateOutputType = {
     id: number | null
     id_user: number | null
-    nama_konter: string | null
     total_harga: Decimal | null
     diskon: Decimal | null
     status: string | null
@@ -4712,7 +4711,6 @@ export namespace Prisma {
   export type TransaksiMaxAggregateOutputType = {
     id: number | null
     id_user: number | null
-    nama_konter: string | null
     total_harga: Decimal | null
     diskon: Decimal | null
     status: string | null
@@ -4723,7 +4721,6 @@ export namespace Prisma {
   export type TransaksiCountAggregateOutputType = {
     id: number
     id_user: number
-    nama_konter: number
     total_harga: number
     diskon: number
     status: number
@@ -4750,7 +4747,6 @@ export namespace Prisma {
   export type TransaksiMinAggregateInputType = {
     id?: true
     id_user?: true
-    nama_konter?: true
     total_harga?: true
     diskon?: true
     status?: true
@@ -4761,7 +4757,6 @@ export namespace Prisma {
   export type TransaksiMaxAggregateInputType = {
     id?: true
     id_user?: true
-    nama_konter?: true
     total_harga?: true
     diskon?: true
     status?: true
@@ -4772,7 +4767,6 @@ export namespace Prisma {
   export type TransaksiCountAggregateInputType = {
     id?: true
     id_user?: true
-    nama_konter?: true
     total_harga?: true
     diskon?: true
     status?: true
@@ -4870,7 +4864,6 @@ export namespace Prisma {
   export type TransaksiGroupByOutputType = {
     id: number
     id_user: number
-    nama_konter: string | null
     total_harga: Decimal
     diskon: Decimal | null
     status: string | null
@@ -4900,7 +4893,6 @@ export namespace Prisma {
   export type TransaksiSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     id_user?: boolean
-    nama_konter?: boolean
     total_harga?: boolean
     diskon?: boolean
     status?: boolean
@@ -4916,7 +4908,6 @@ export namespace Prisma {
   export type TransaksiSelectScalar = {
     id?: boolean
     id_user?: boolean
-    nama_konter?: boolean
     total_harga?: boolean
     diskon?: boolean
     status?: boolean
@@ -4924,7 +4915,7 @@ export namespace Prisma {
     updated_at?: boolean
   }
 
-  export type TransaksiOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "id_user" | "nama_konter" | "total_harga" | "diskon" | "status" | "created_at" | "updated_at", ExtArgs["result"]["transaksi"]>
+  export type TransaksiOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "id_user" | "total_harga" | "diskon" | "status" | "created_at" | "updated_at", ExtArgs["result"]["transaksi"]>
   export type TransaksiInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | UserDefaultArgs<ExtArgs>
     detailTransaksi?: boolean | Transaksi$detailTransaksiArgs<ExtArgs>
@@ -4940,7 +4931,6 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: number
       id_user: number
-      nama_konter: string | null
       total_harga: Prisma.Decimal
       diskon: Prisma.Decimal | null
       status: string | null
@@ -5319,7 +5309,6 @@ export namespace Prisma {
   interface TransaksiFieldRefs {
     readonly id: FieldRef<"Transaksi", 'Int'>
     readonly id_user: FieldRef<"Transaksi", 'Int'>
-    readonly nama_konter: FieldRef<"Transaksi", 'String'>
     readonly total_harga: FieldRef<"Transaksi", 'Decimal'>
     readonly diskon: FieldRef<"Transaksi", 'Decimal'>
     readonly status: FieldRef<"Transaksi", 'String'>
@@ -8700,7 +8689,6 @@ export namespace Prisma {
   export const TransaksiScalarFieldEnum: {
     id: 'id',
     id_user: 'id_user',
-    nama_konter: 'nama_konter',
     total_harga: 'total_harga',
     diskon: 'diskon',
     status: 'status',
@@ -8790,7 +8778,6 @@ export namespace Prisma {
 
 
   export const TransaksiOrderByRelevanceFieldEnum: {
-    nama_konter: 'nama_konter',
     status: 'status'
   };
 
@@ -9098,7 +9085,6 @@ export namespace Prisma {
     NOT?: TransaksiWhereInput | TransaksiWhereInput[]
     id?: IntFilter<"Transaksi"> | number
     id_user?: IntFilter<"Transaksi"> | number
-    nama_konter?: StringNullableFilter<"Transaksi"> | string | null
     total_harga?: DecimalFilter<"Transaksi"> | Decimal | DecimalJsLike | number | string
     diskon?: DecimalNullableFilter<"Transaksi"> | Decimal | DecimalJsLike | number | string | null
     status?: StringNullableFilter<"Transaksi"> | string | null
@@ -9111,7 +9097,6 @@ export namespace Prisma {
   export type TransaksiOrderByWithRelationInput = {
     id?: SortOrder
     id_user?: SortOrder
-    nama_konter?: SortOrderInput | SortOrder
     total_harga?: SortOrder
     diskon?: SortOrderInput | SortOrder
     status?: SortOrderInput | SortOrder
@@ -9128,7 +9113,6 @@ export namespace Prisma {
     OR?: TransaksiWhereInput[]
     NOT?: TransaksiWhereInput | TransaksiWhereInput[]
     id_user?: IntFilter<"Transaksi"> | number
-    nama_konter?: StringNullableFilter<"Transaksi"> | string | null
     total_harga?: DecimalFilter<"Transaksi"> | Decimal | DecimalJsLike | number | string
     diskon?: DecimalNullableFilter<"Transaksi"> | Decimal | DecimalJsLike | number | string | null
     status?: StringNullableFilter<"Transaksi"> | string | null
@@ -9141,7 +9125,6 @@ export namespace Prisma {
   export type TransaksiOrderByWithAggregationInput = {
     id?: SortOrder
     id_user?: SortOrder
-    nama_konter?: SortOrderInput | SortOrder
     total_harga?: SortOrder
     diskon?: SortOrderInput | SortOrder
     status?: SortOrderInput | SortOrder
@@ -9160,7 +9143,6 @@ export namespace Prisma {
     NOT?: TransaksiScalarWhereWithAggregatesInput | TransaksiScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"Transaksi"> | number
     id_user?: IntWithAggregatesFilter<"Transaksi"> | number
-    nama_konter?: StringNullableWithAggregatesFilter<"Transaksi"> | string | null
     total_harga?: DecimalWithAggregatesFilter<"Transaksi"> | Decimal | DecimalJsLike | number | string
     diskon?: DecimalNullableWithAggregatesFilter<"Transaksi"> | Decimal | DecimalJsLike | number | string | null
     status?: StringNullableWithAggregatesFilter<"Transaksi"> | string | null
@@ -9585,7 +9567,6 @@ export namespace Prisma {
   }
 
   export type TransaksiCreateInput = {
-    nama_konter?: string | null
     total_harga: Decimal | DecimalJsLike | number | string
     diskon?: Decimal | DecimalJsLike | number | string | null
     status?: string | null
@@ -9598,7 +9579,6 @@ export namespace Prisma {
   export type TransaksiUncheckedCreateInput = {
     id?: number
     id_user: number
-    nama_konter?: string | null
     total_harga: Decimal | DecimalJsLike | number | string
     diskon?: Decimal | DecimalJsLike | number | string | null
     status?: string | null
@@ -9608,7 +9588,6 @@ export namespace Prisma {
   }
 
   export type TransaksiUpdateInput = {
-    nama_konter?: NullableStringFieldUpdateOperationsInput | string | null
     total_harga?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     diskon?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     status?: NullableStringFieldUpdateOperationsInput | string | null
@@ -9621,7 +9600,6 @@ export namespace Prisma {
   export type TransaksiUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     id_user?: IntFieldUpdateOperationsInput | number
-    nama_konter?: NullableStringFieldUpdateOperationsInput | string | null
     total_harga?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     diskon?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     status?: NullableStringFieldUpdateOperationsInput | string | null
@@ -9633,7 +9611,6 @@ export namespace Prisma {
   export type TransaksiCreateManyInput = {
     id?: number
     id_user: number
-    nama_konter?: string | null
     total_harga: Decimal | DecimalJsLike | number | string
     diskon?: Decimal | DecimalJsLike | number | string | null
     status?: string | null
@@ -9642,7 +9619,6 @@ export namespace Prisma {
   }
 
   export type TransaksiUpdateManyMutationInput = {
-    nama_konter?: NullableStringFieldUpdateOperationsInput | string | null
     total_harga?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     diskon?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     status?: NullableStringFieldUpdateOperationsInput | string | null
@@ -9653,7 +9629,6 @@ export namespace Prisma {
   export type TransaksiUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     id_user?: IntFieldUpdateOperationsInput | number
-    nama_konter?: NullableStringFieldUpdateOperationsInput | string | null
     total_harga?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     diskon?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     status?: NullableStringFieldUpdateOperationsInput | string | null
@@ -10204,7 +10179,6 @@ export namespace Prisma {
   export type TransaksiCountOrderByAggregateInput = {
     id?: SortOrder
     id_user?: SortOrder
-    nama_konter?: SortOrder
     total_harga?: SortOrder
     diskon?: SortOrder
     status?: SortOrder
@@ -10222,7 +10196,6 @@ export namespace Prisma {
   export type TransaksiMaxOrderByAggregateInput = {
     id?: SortOrder
     id_user?: SortOrder
-    nama_konter?: SortOrder
     total_harga?: SortOrder
     diskon?: SortOrder
     status?: SortOrder
@@ -10233,7 +10206,6 @@ export namespace Prisma {
   export type TransaksiMinOrderByAggregateInput = {
     id?: SortOrder
     id_user?: SortOrder
-    nama_konter?: SortOrder
     total_harga?: SortOrder
     diskon?: SortOrder
     status?: SortOrder
@@ -11011,7 +10983,6 @@ export namespace Prisma {
   }
 
   export type TransaksiCreateWithoutUserInput = {
-    nama_konter?: string | null
     total_harga: Decimal | DecimalJsLike | number | string
     diskon?: Decimal | DecimalJsLike | number | string | null
     status?: string | null
@@ -11022,7 +10993,6 @@ export namespace Prisma {
 
   export type TransaksiUncheckedCreateWithoutUserInput = {
     id?: number
-    nama_konter?: string | null
     total_harga: Decimal | DecimalJsLike | number | string
     diskon?: Decimal | DecimalJsLike | number | string | null
     status?: string | null
@@ -11100,7 +11070,6 @@ export namespace Prisma {
     NOT?: TransaksiScalarWhereInput | TransaksiScalarWhereInput[]
     id?: IntFilter<"Transaksi"> | number
     id_user?: IntFilter<"Transaksi"> | number
-    nama_konter?: StringNullableFilter<"Transaksi"> | string | null
     total_harga?: DecimalFilter<"Transaksi"> | Decimal | DecimalJsLike | number | string
     diskon?: DecimalNullableFilter<"Transaksi"> | Decimal | DecimalJsLike | number | string | null
     status?: StringNullableFilter<"Transaksi"> | string | null
@@ -11475,7 +11444,6 @@ export namespace Prisma {
   }
 
   export type TransaksiCreateWithoutDetailTransaksiInput = {
-    nama_konter?: string | null
     total_harga: Decimal | DecimalJsLike | number | string
     diskon?: Decimal | DecimalJsLike | number | string | null
     status?: string | null
@@ -11487,7 +11455,6 @@ export namespace Prisma {
   export type TransaksiUncheckedCreateWithoutDetailTransaksiInput = {
     id?: number
     id_user: number
-    nama_konter?: string | null
     total_harga: Decimal | DecimalJsLike | number | string
     diskon?: Decimal | DecimalJsLike | number | string | null
     status?: string | null
@@ -11544,7 +11511,6 @@ export namespace Prisma {
   }
 
   export type TransaksiUpdateWithoutDetailTransaksiInput = {
-    nama_konter?: NullableStringFieldUpdateOperationsInput | string | null
     total_harga?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     diskon?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     status?: NullableStringFieldUpdateOperationsInput | string | null
@@ -11556,7 +11522,6 @@ export namespace Prisma {
   export type TransaksiUncheckedUpdateWithoutDetailTransaksiInput = {
     id?: IntFieldUpdateOperationsInput | number
     id_user?: IntFieldUpdateOperationsInput | number
-    nama_konter?: NullableStringFieldUpdateOperationsInput | string | null
     total_harga?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     diskon?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     status?: NullableStringFieldUpdateOperationsInput | string | null
@@ -11689,7 +11654,6 @@ export namespace Prisma {
 
   export type TransaksiCreateManyUserInput = {
     id?: number
-    nama_konter?: string | null
     total_harga: Decimal | DecimalJsLike | number | string
     diskon?: Decimal | DecimalJsLike | number | string | null
     status?: string | null
@@ -11711,7 +11675,6 @@ export namespace Prisma {
   }
 
   export type TransaksiUpdateWithoutUserInput = {
-    nama_konter?: NullableStringFieldUpdateOperationsInput | string | null
     total_harga?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     diskon?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     status?: NullableStringFieldUpdateOperationsInput | string | null
@@ -11722,7 +11685,6 @@ export namespace Prisma {
 
   export type TransaksiUncheckedUpdateWithoutUserInput = {
     id?: IntFieldUpdateOperationsInput | number
-    nama_konter?: NullableStringFieldUpdateOperationsInput | string | null
     total_harga?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     diskon?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     status?: NullableStringFieldUpdateOperationsInput | string | null
@@ -11733,7 +11695,6 @@ export namespace Prisma {
 
   export type TransaksiUncheckedUpdateManyWithoutUserInput = {
     id?: IntFieldUpdateOperationsInput | number
-    nama_konter?: NullableStringFieldUpdateOperationsInput | string | null
     total_harga?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     diskon?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     status?: NullableStringFieldUpdateOperationsInput | string | null
