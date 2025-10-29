@@ -1,7 +1,7 @@
 {
-  "name": "density-dev",
+  "name": "Penjualan_backend",
   "version": "1.0.0",
-  "description": "Density Development",
+  "description": "Penjualan Development",
   "main": "server.ts",
   "types": "./src/@types/express/index.d.ts",
   "_moduleAliases": {
