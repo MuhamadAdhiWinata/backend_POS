@@ -4,18 +4,22 @@ import { errorResponse, successResponse } from "@utils/response";
 import { Request, Response } from "express";
 import z from "zod";
 
-export const RentalProductSchema = z.object({
-  name: z.string(),
-  price: z.number(),
-  stock: z.number(),
-});
+export const userSchema = z.object({
+    nama: z.string(),
+    email: z.string().email(),
+    password: z.string().min(6),
+    no_hp: z.string().optional(),
+    alamat: z.string().optional(),
+    role: z.string(),
+    status: z.string().optional()
+})
 
-type RentalProductInput = z.infer<typeof RentalProductSchema>;
+type userInput = z.infer<typeof userSchema>
 
-export const RentalProductController = {
+export const userController = {
   index: async (req: Request, res: Response) => {
     try {
-      const data = await prisma.rentalProduct.findMany();
+      const data = await prisma.user.findMany();
 
       return successResponse(res, data, "Success find");
     } catch (err) {
@@ -25,10 +29,11 @@ export const RentalProductController = {
 
   store: async (req: Request, res: Response) => {
     try {
-      const data: RentalProductInput = RentalProductSchema.parse(req.body);
-      const save = await prisma.rentalProduct.create({ data });
+      const data:userInput = userSchema.parse(req.body); 
 
-      return successResponse(res, save, "Success store");
+      await prisma.user.create({data: req.body});
+
+      return successResponse(res, data, "Success store");
     } catch (err) {
       return errorResponse(res, err, "Error store");
     }
@@ -37,7 +42,7 @@ export const RentalProductController = {
   show: async (req: Request, res: Response) => {
     try {
       const id = Number(req.params.id);
-      const data = await findByColumn(prisma.rentalProduct, id);
+      const data = await findByColumn(prisma.user, id);
       if (!data) return errorResponse(res, null, "Not Found", 404);
 
       return successResponse(res, data, "Success show");
@@ -49,14 +54,13 @@ export const RentalProductController = {
   update: async (req: Request, res: Response) => {
     try {
       const id = Number(req.params.id);
-      const data: RentalProductInput = RentalProductSchema.parse(req.body);
 
-      const existing = await findByColumn(prisma.rentalProduct, id);
+      const existing = await findByColumn(prisma.user, id);
       if (!existing) return errorResponse(res, null, "Not Found", 404);
 
-      const save = await prisma.rentalProduct.update({
-        where: { id },
-        data,
+      const save = await prisma.user.update({
+        where: {id},
+        data: req.body
       });
 
       return successResponse(res, save, "Success update");
@@ -68,7 +72,7 @@ export const RentalProductController = {
   destroy: async (req: Request, res: Response) => {
     try {
       const id = Number(req.params.id);
-      const data = await prisma.rentalProduct.delete({ where: { id } });
+      const data = await prisma.user.delete({where: {id}});
 
       return successResponse(res, data, "Success delete");
     } catch (err) {

@@ -9,8 +9,7 @@
     "@config": "src/config",
     "@controllers": "src/controllers",
     "@routes": "src/routes",
-    "@docs": "src/docs",
-    "@middleware": "src/middleware"
+    "@docs": "src/docs"
   },
   "scripts": {
     "dev": "nodemon",
